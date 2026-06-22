@@ -22,8 +22,8 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Build Project to Release x64
-      # *.sln kullanarak klasördeki çözüm dosyasını otomatik bulmasını sağlıyoruz
-      run: msbuild *.sln /p:Configuration=Release /p:Platform=x64 /p:WarningLevel=0
+      # Hatayı önlemek için doğrudan net dosya adını hedefliyoruz
+      run: msbuild NovaDumper.sln /p:Configuration=Release /p:Platform=x64 /p:WarningLevel=0
 
     - name: Upload NovaDumper Artifact
       uses: actions/upload-artifact@v4
